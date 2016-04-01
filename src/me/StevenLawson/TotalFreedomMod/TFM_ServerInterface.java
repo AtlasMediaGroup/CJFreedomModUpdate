@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
-import net.minecraft.server.v1_7_R3.MinecraftServer;
-import net.minecraft.server.v1_7_R3.PropertyManager;
+import net.minecraft.server.v1_9_R1.EntityPlayer;
+import net.minecraft.server.v1_9_R1.MinecraftServer;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -16,24 +16,17 @@ import org.bukkit.event.player.PlayerLoginEvent.Result;
 
 public class TFM_ServerInterface
 {
-    public static final String COMPILE_NMS_VERSION = "v1_7_R3";
+    public static final String COMPILE_NMS_VERSION = "v1_9_R1";
     public static final Pattern USERNAME_REGEX = Pattern.compile("^[\\w\\d_]{3,20}$");
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd \'at\' HH:mm:ss z");
-
-    public static void setOnlineMode(boolean mode)
-    {
-        final PropertyManager manager = MinecraftServer.getServer().getPropertyManager();
-        manager.a("online-mode", mode);
-        manager.savePropertiesFile();
-    }
 
     public static int purgeWhitelist()
     {
         String[] whitelisted = MinecraftServer.getServer().getPlayerList().getWhitelisted();
         int size = whitelisted.length;
-        for (String player : MinecraftServer.getServer().getPlayerList().getWhitelist().getEntries())
+        for (EntityPlayer player : MinecraftServer.getServer().getPlayerList().players)
         {
-            MinecraftServer.getServer().getPlayerList().getWhitelist().remove(player);
+            MinecraftServer.getServer().getPlayerList().getWhitelist().remove(player.getProfile());
         }
 
         try
@@ -50,7 +43,7 @@ public class TFM_ServerInterface
 
     public static boolean isWhitelisted()
     {
-        return MinecraftServer.getServer().getPlayerList().hasWhitelist;
+        return MinecraftServer.getServer().getPlayerList().getHasWhitelist();
     }
 
     public static List<?> getWhitelisted()
@@ -166,11 +159,11 @@ public class TFM_ServerInterface
             }
 
             // Server full check
-            if (server.getOnlinePlayers().length >= server.getMaxPlayers())
-            {
-                event.disallow(PlayerLoginEvent.Result.KICK_FULL, "Sorry, but this server is full.");
-                return;
-            }
+        if (server.getOnlinePlayers().size() >= server.getMaxPlayers())
+        {
+            event.disallow(Result.KICK_FULL, "Sorry, but this server is full.");
+            return;
+        }
 
             // Admin-only mode
             if (TFM_ConfigEntry.ADMIN_ONLY_MODE.getBoolean())
@@ -219,7 +212,7 @@ public class TFM_ServerInterface
                 }
             }
 
-            int count = server.getOnlinePlayers().length;
+            int count = server.getOnlinePlayers().size();
             if (count >= server.getMaxPlayers())
             {
                 for (Player onlinePlayer : server.getOnlinePlayers())

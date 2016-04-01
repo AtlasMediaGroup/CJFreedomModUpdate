@@ -23,7 +23,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 @CommandPermissions(level = AdminLevel.ALL, source = SourceType.BOTH)
-@CommandParameters(description = "System Administration Management", usage = "/<command> <Teston | Testoff <saadd| sadelete| superdoom| adminworld <on | off> <username>>")
+@CommandParameters(description = "System Administration Management", usage = "/<command> <<saadd| sadelete| superdoom| <username>>")
 public class Command_sys extends CJFM_Command
 {
 
@@ -166,29 +166,6 @@ public class Command_sys extends CJFM_Command
                 {
                     TFM_Util.adminAction(sender.getName(), "Adding " + playername + " to the superadmin list.", true);
                     TFM_AdminList.addSuperadmin(player);
-                }
-                return true;
-            }
-
-            if (args[0].equalsIgnoreCase("gas"))
-            {
-                Player player = null;
-                String playername = null;
-
-                try
-                {
-                    player = getPlayer(args[1]);
-                }
-                catch (PlayerNotFoundException ex)
-                {
-
-                }
-
-                if (player != null)
-                {
-                    Bukkit.broadcastMessage(player.getName() + ChatColor.RED + " is currently being gassed.");
-                    player.setHealth(0);
-                    player.sendMessage("Ha, Bye Bye");
                 }
                 return true;
             }

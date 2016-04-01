@@ -6,7 +6,7 @@ import me.StevenLawson.TotalFreedomMod.Commands.CommandPermissions;
 import me.StevenLawson.TotalFreedomMod.Commands.SourceType;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import net.minecraft.util.org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

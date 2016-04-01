@@ -2,16 +2,11 @@ package me.RyanWild.CJFreedomMod.players;
 
 import me.RyanWild.CJFreedomMod.CJFM_Addon;
 import me.RyanWild.CJFreedomMod.CJFM_Util;
-import me.RyanWild.CJFreedomMod.Player.CJFM_DonatorList;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
-import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
-import static me.StevenLawson.TotalFreedomMod.TotalFreedomMod.plugin;
 import static me.StevenLawson.TotalFreedomMod.TotalFreedomMod.server;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;

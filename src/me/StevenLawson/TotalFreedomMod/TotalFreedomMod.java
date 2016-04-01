@@ -1,7 +1,6 @@
 package me.StevenLawson.TotalFreedomMod;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
@@ -12,18 +11,14 @@ import me.RyanWild.CJFreedomMod.players.CJFM_AdminBusy;
 import me.RyanWild.CJFreedomMod.CJFM_Util;
 import me.RyanWild.CJFreedomMod.Commands.CJFM_CommandHandler;
 import me.RyanWild.CJFreedomMod.Commands.CJFM_CommandLoader;
-import me.RyanWild.CJFreedomMod.Config.CJFM_ConfigEntry;
 import me.RyanWild.CJFreedomMod.Listener.CJFM_PlayerListener;
 import me.RyanWild.CJFreedomMod.players.CJFM_PlayerManager;
 import me.StevenLawson.TotalFreedomMod.Commands.TFM_CommandHandler;
 import me.StevenLawson.TotalFreedomMod.Commands.TFM_CommandLoader;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
-import me.StevenLawson.TotalFreedomMod.HTTPD.TFM_HTTPD_Manager;
 import me.StevenLawson.TotalFreedomMod.Listener.*;
 import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
 import me.StevenLawson.TotalFreedomMod.World.TFM_Flatlands;
-import me.husky.mysql.MySQL;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.World;
@@ -34,11 +29,9 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-import org.mcstats.Metrics;
 
 public class TotalFreedomMod extends JavaPlugin
 {
-    public static MySQL mySQL;
     //
     public static final long HEARTBEAT_RATE = 5L; //Seconds
     public static final long SERVICE_CHECKER_RATE = 120L;
@@ -184,19 +177,7 @@ public class TotalFreedomMod extends JavaPlugin
         // Heartbeat
         new TFM_Heartbeat(plugin).runTaskTimer(plugin, HEARTBEAT_RATE * 20L, HEARTBEAT_RATE * 20L);
 
-        // metrics @ http://mcstats.org/plugin/TotalFreedomMod
-        try
-        {
-            final Metrics metrics = new Metrics(plugin);
-            metrics.start();
-        }
-        catch (IOException ex)
-        {
-            TFM_Log.warning("Failed to submit metrics data: " + ex.getMessage());
-        }
-
         TFM_ServiceChecker.getInstance().start();
-        TFM_HTTPD_Manager.getInstance().start();
 
         TFM_Log.info("Version " + pluginVersion + " for " + TFM_ServerInterface.COMPILE_NMS_VERSION + " enabled");
 
@@ -218,7 +199,6 @@ public class TotalFreedomMod extends JavaPlugin
     {
         server.getScheduler().cancelTasks(plugin);
 
-        TFM_HTTPD_Manager.getInstance().stop();
         TFM_BanManager.getInstance().save();
 
         TFM_Log.info("Plugin disabled");

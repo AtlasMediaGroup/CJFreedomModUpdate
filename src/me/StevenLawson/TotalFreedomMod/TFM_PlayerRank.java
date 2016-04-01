@@ -1,9 +1,7 @@
 package me.StevenLawson.TotalFreedomMod;
 
 import me.RyanWild.CJFreedomMod.CJFM_Util;
-import me.RyanWild.CJFreedomMod.Player.CJFM_DonatorList;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
-import static me.StevenLawson.TotalFreedomMod.TFM_Util.DEVELOPERS;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -86,16 +84,6 @@ public enum TFM_PlayerRank
         if (CJFM_Util.DEVELOPERS.contains(sender.getName().toLowerCase()))
         {
             return DEVELOPER;
-        }
-
-        if (CJFM_DonatorList.isSuperDonor(sender))
-        {
-            return SUPERDONATOR;
-        }
-
-        if (CJFM_DonatorList.isSeniorDonor(sender))
-        {
-            return SENIORDONATOR;
         }
 
         final TFM_Admin entry = TFM_AdminList.getEntry((Player) sender);

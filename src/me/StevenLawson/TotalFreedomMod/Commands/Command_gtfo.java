@@ -6,9 +6,8 @@ import me.StevenLawson.TotalFreedomMod.TFM_BanManager;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
-import me.confuser.barapi.BarAPI;
-import net.minecraft.util.org.apache.commons.lang3.ArrayUtils;
-import net.minecraft.util.org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -85,8 +84,6 @@ public class Command_gtfo extends TFM_Command
             ip = String.format("%s.%s.*.*", ipParts[0], ipParts[1]);
         }
         TFM_Util.bcastMsg(sender.getName() + " - " + String.format("Banning: %s, IP: %s for %s.", player.getName(), ip, reason), ChatColor.RED);
-
-        BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.RED + sender.getName() + " Has Banned " + player.getName() + " for " + reason, 60);
 
         TFM_BanManager.getInstance().addIpBan(new TFM_Ban(ip, player.getName(), sender.getName(), null, reason));
 

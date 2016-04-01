@@ -35,7 +35,7 @@ public class TFM_Heartbeat extends BukkitRunnable
         final boolean doAwayKickCheck
                 = TFM_ConfigEntry.AUTOKICK_ENABLED.getBoolean()
                 && essentialsBridge.isEssentialsEnabled()
-                && ((server.getOnlinePlayers().length / server.getMaxPlayers()) > TFM_ConfigEntry.AUTOKICK_THRESHOLD.getDouble());
+                && ((server.getOnlinePlayers().size() / server.getMaxPlayers()) > TFM_ConfigEntry.AUTOKICK_THRESHOLD.getDouble());
 
         for (Player player : server.getOnlinePlayers())
         {

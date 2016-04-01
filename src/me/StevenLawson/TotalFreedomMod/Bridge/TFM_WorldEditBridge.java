@@ -132,7 +132,7 @@ public class TFM_WorldEditBridge
             final LocalSession session = getPlayerSession(player);
             if (session != null)
             {
-                final LocalWorld selectionWorld = session.getSelectionWorld();
+                final LocalWorld selectionWorld = (LocalWorld) session.getSelectionWorld();
                 final Region selection = session.getSelection(selectionWorld);
                 if (TFM_ProtectedArea.isInProtectedArea(
                         getBukkitVector(selection.getMinimumPoint()),

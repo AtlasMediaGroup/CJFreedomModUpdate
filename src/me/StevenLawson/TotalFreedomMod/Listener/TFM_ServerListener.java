@@ -71,7 +71,7 @@ public class TFM_ServerListener implements Listener
             return;
         }
 
-        if (Bukkit.getOnlinePlayers().length >= Bukkit.getMaxPlayers())
+        if (Bukkit.getOnlinePlayers().size() >= Bukkit.getMaxPlayers())
         {
             event.setMotd(ChatColor.RED + "Server is full.");
             return;

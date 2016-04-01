@@ -1,7 +1,6 @@
 package me.RyanWild.CJFreedomMod.Commands;
 
 import java.util.List;
-import me.RyanWild.CJFreedomMod.Player.CJFM_DonatorList;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Log;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
@@ -126,16 +125,6 @@ public abstract class CJFM_Command
                     return false;
                 }
                 else if (level == AdminLevel.OP && !sender_p.isOp())
-                {
-                    return false;
-                }
-                else if (level == AdminLevel.SUPERDONATOR
-                        && !CJFM_DonatorList.isSuperDonor(commandSender))
-                {
-                    return false;
-                }
-                else if (level == AdminLevel.SENIORDONATOR
-                        && !CJFM_DonatorList.isSeniorDonor(commandSender))
                 {
                     return false;
                 }

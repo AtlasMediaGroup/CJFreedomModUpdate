@@ -4,7 +4,6 @@ import me.StevenLawson.TotalFreedomMod.TFM_ServerInterface;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
-import me.confuser.barapi.BarAPI;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
@@ -68,7 +67,6 @@ public class Command_whitelist extends TFM_Command
         if (args[0].equalsIgnoreCase("on"))
         {
             TFM_Util.adminAction(sender.getName(), "Turning the whitelist on.", true);
-            BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.RED + sender.getName() + " Has turned whitelist on", 60);
             server.setWhitelist(true);
             return true;
         }
@@ -77,7 +75,6 @@ public class Command_whitelist extends TFM_Command
         if (args[0].equalsIgnoreCase("off"))
         {
             TFM_Util.adminAction(sender.getName(), "Turning the whitelist off.", true);
-            BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.GREEN + sender.getName() + " Has turned whitelist off", 60);
             server.setWhitelist(false);
             return true;
         }
@@ -100,7 +97,6 @@ public class Command_whitelist extends TFM_Command
             }
 
             TFM_Util.adminAction(sender.getName(), "Adding " + player.getName() + " to the whitelist.", false);
-            BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.GREEN + sender.getName() + " Has Whitelisted " + player.getName(), 60);
             player.setWhitelisted(true);
             return true;
         }
@@ -125,7 +121,6 @@ public class Command_whitelist extends TFM_Command
             if (player.isWhitelisted())
             {
                 TFM_Util.adminAction(sender.getName(), "Removing " + player.getName() + " from the whitelist.", false);
-                BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.RED + sender.getName() + " Has Removed " + player.getName() + " from the whitelist.", 60);
                 player.setWhitelisted(false);
                 return true;
             }
@@ -141,7 +136,6 @@ public class Command_whitelist extends TFM_Command
         if (args[0].equalsIgnoreCase("addall"))
         {
             TFM_Util.adminAction(sender.getName(), "Adding all online players to the whitelist.", false);
-            BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.GREEN + sender.getName() + " Has added all onloine players to whitelist", 60);
             int counter = 0;
             for (Player player : server.getOnlinePlayers())
             {
@@ -168,8 +162,6 @@ public class Command_whitelist extends TFM_Command
         {
             TFM_Util.adminAction(sender.getName(), "Removing all players from the whitelist.", false);
             playerMsg("Removed " + TFM_ServerInterface.purgeWhitelist() + " players from the whitelist.");
-            BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.RED + sender.getName() + " Has removed all onloine players from whitelist", 60);
-
             return true;
         }
 

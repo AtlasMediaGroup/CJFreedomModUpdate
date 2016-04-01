@@ -17,7 +17,7 @@ public class Command_unicorn extends CJFM_Command
 
         for (Player player : server.getOnlinePlayers())
         {
-            player.playSound(player.getLocation(), Sound.FIREWORK_TWINKLE, 1.0F, 1.0F);
+            player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_BLAST, 1.0F, 1.0F);
 
         }
 

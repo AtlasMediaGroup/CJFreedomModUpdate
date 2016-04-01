@@ -3,7 +3,6 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
-import me.confuser.barapi.BarAPI;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -67,7 +66,6 @@ public class Command_cage extends TFM_Command
             if ("off".equals(args[1]))
             {
                 TFM_Util.adminAction(sender.getName(), "Uncaging " + player.getName(), true);
-                BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.GREEN + sender.getName() + " Has Uncaged " + player.getName(), 60);
                 playerdata.setCaged(false);
                 playerdata.regenerateHistory();
                 playerdata.clearHistory();
@@ -112,12 +110,10 @@ public class Command_cage extends TFM_Command
         if (outerMaterial != Material.SKULL)
         {
             TFM_Util.adminAction(sender.getName(), "Caging " + player.getName(), true);
-            BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.RED + sender.getName() + " Has Caged " + player.getName(), 60);
         }
         else
         {
             TFM_Util.adminAction(sender.getName(), "Caging " + player.getName() + " in PURE_DARTH", true);
-            BarAPI.setMessage(ChatColor.BOLD + "" + ChatColor.RED + sender.getName() + " Has Caged " + player.getName(), 60);
         }
 
         return true;
