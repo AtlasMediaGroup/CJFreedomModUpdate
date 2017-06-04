@@ -1,5 +1,5 @@
 //Made by Hawkeyeshi
-package me.RyanWild.CJFreedomMod.Commands;
+/*package me.RyanWild.CJFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import org.bukkit.Bukkit;
@@ -38,4 +38,4 @@ public class Command_varuct extends CJFM_Command
 
         return false;
     }
-}
+}*/

@@ -18,9 +18,9 @@ public class CJFM_Util
 
     public static TotalFreedomMod plugin;
 
-    public static final List<String> EXECUTIVES = Arrays.asList("Camzie99");
-    public static final List<String> SYSADMINS = Arrays.asList("Wild1145", "Varuct", "thecjgcjg", "darthsalamon");
-    public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "DarthSalamon", "wild1145", "Paldiu", "Wahoozel", "Camzie99", "hawkeyeshi");
+    public static final List<String> EXECUTIVES = Arrays.asList("");
+    public static final List<String> MANAGERS = Arrays.asList("Wild1145", "Varuct", "thecjgcjg", "Ninjablue1", "Hockeyfan360");
+    public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "DarthSalamon", "wild1145", "Paldiu", "Wahoozel", "Camzie99", "hawkeyeshi", "Paul19988");
     public static final List<String> FAMOUS = Arrays.asList(
             "skythekidrs", "antvenom", "deadlox", "stampylongnose", "sethbling", "asfjerome", "dantdm", "pokemondanlv45", "zexyzek", "ssundee",
             "explodingtnt", "kurtjmac", "xephos", "honeydew", "captainsparklez", "truemu", "jeb_", "grumm", "notch", "chimneyswift", "vechs",

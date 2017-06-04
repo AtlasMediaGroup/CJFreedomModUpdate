@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Manages World Edit Access", usage = "/<command>")
+@CommandParameters(description = "Manages Nyan Plugin Access", usage = "/<command>")
 public class Command_nyantoggle extends CJFM_Command
 {
     @Override

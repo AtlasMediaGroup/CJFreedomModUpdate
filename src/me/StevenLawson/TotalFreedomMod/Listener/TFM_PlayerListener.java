@@ -716,9 +716,9 @@ public class TFM_PlayerListener implements Listener
         }
 
         // For anything I want to auto happen as I join
-        if (player.getName().equalsIgnoreCase("wild1145"))
+        if (player.getName().equalsIgnoreCase("Wild1145"))
         {
-            Bukkit.dispatchCommand(player, "nick Wild1145 &dWild1145");
+            Bukkit.dispatchCommand(player, "nick Wild1145 &dRyan");
         }
 
         final TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(player);

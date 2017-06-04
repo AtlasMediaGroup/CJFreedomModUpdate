@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
-@CommandParameters(description = "Pretty rainbow trails.", usage = "/<command> [off]")
+@CommandParameters(description = "Warns people that the map is going to be reset shortly", usage = "/<command>")
 public class Command_reset extends CJFM_Command
 {
     @Override

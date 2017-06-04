@@ -1,6 +1,4 @@
-/* I'm commenting this out as it's bugged and doesn't work in game and I'll get round to fixing it anyways :P It's much better to have LESS little red exclamation marks everywhere :3
-
-package me.StevenLawson.TotalFreedomMod.Commands;
+package me.RyanWild.CJFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import org.bukkit.*;
@@ -11,7 +9,7 @@ import org.bukkit.util.Vector;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(description = "Send a player into the null void.", usage = "/<command> <player>")
-public class Command_gt extends TFM_Command
+public class Command_gt extends CJFM_Command
 {
 	@Override
 	public boolean run(CommandSender sender, Player sender_p, Command cmd, String lbl, String[] args, boolean senderIsConsole)
@@ -41,9 +39,9 @@ public class Command_gt extends TFM_Command
 			p.setVelocity(new Vector(0, 10, 0));
 			for (int x = -1; x <= 1; x++)
 			{
-				for (int z = -1; z <= 1;, z++)
+				for (int z = -1; z <= 1; z++)
 				{
-					Location strikePos = new Location(l.getWorld(), l.getBlockX() + x, l.getBlockY(), l.getBlockZ() + z));
+					Location strikePos = new Location(l.getWorld(), l.getBlockX() + x, l.getBlockY(), l.getBlockZ() + z);
 					l.getWorld().strikeLightning(strikePos);
 				}
 			}
@@ -63,4 +61,4 @@ public class Command_gt extends TFM_Command
 		
 		return true;
 	}
-} */
+} 

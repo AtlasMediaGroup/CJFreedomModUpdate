@@ -20,9 +20,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
 
-@CommandPermissions(level = AdminLevel.ALL, source = SourceType.BOTH)
+@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(description = "System Administration Management", usage = "/<command> <<saadd| sadelete| superdoom| <username>>")
 public class Command_sys extends CJFM_Command
 {
@@ -31,7 +30,7 @@ public class Command_sys extends CJFM_Command
     public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
 
-        if (!CJFM_Util.SYSADMINS.contains(sender.getName()))
+        if (!CJFM_Util.MANAGERS.contains(sender.getName()))
         {
             sender.sendMessage(TotalFreedomMod.MSG_NO_PERMS);
             TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use a system admin only command. System administration team has been alerted.", true);

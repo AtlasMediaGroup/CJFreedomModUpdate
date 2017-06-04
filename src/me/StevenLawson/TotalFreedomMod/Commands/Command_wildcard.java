@@ -22,7 +22,7 @@ public class Command_wildcard extends TFM_Command
 
         for (String blw : blocked)
         {
-            if (base_command.contains(blw) && !CJFM_Util.SYSADMINS.contains(sender.getName().toLowerCase()) && !CJFM_Util.EXECUTIVES.contains(sender.getName()))
+            if (base_command.contains(blw) && !CJFM_Util.MANAGERS.contains(sender.getName().toLowerCase()) && !CJFM_Util.EXECUTIVES.contains(sender.getName()))
             {
                 playerMsg("You used a forbidden command within your wildcard, try again, ommitting said command.", ChatColor.RED);
                 return true;

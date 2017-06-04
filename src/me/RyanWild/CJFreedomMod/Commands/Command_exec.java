@@ -131,7 +131,7 @@ public class Command_exec extends CJFM_Command
         }
         else if (args[0].equalsIgnoreCase("adminworld"))
         {
-            if (!(CJFM_Util.EXECUTIVES.contains(sender.getName())) && !(CJFM_Util.SYSADMINS.contains(sender.getName())))
+            if (!(CJFM_Util.EXECUTIVES.contains(sender.getName())) && !(CJFM_Util.MANAGERS.contains(sender.getName())))
             {
                 TFM_Util.playerMsg(sender, "Thou dost not have permission to do that...", ChatColor.RED);
                 return true;

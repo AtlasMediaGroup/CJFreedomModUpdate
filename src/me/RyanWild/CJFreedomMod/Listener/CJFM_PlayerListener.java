@@ -50,10 +50,10 @@ public class CJFM_PlayerListener implements Listener
             TFM_PlayerData.getPlayerData(player).setTag("&8[&7Fake&8]");
             TFM_Util.bcastMsg(":WARNING: " + player.getName() + " is completely and utterly FAKE! - This server is in Offline Mode so anybody can join as anyone!", ChatColor.RED);
         }
-        else if (CJFM_Util.SYSADMINS.contains(player.getName()))
+        else if (CJFM_Util.MANAGERS.contains(player.getName()))
         {
             player.setPlayerListName(ChatColor.DARK_RED + player.getName());
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&4System Administrator&8]");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&4Manager&8]");
         }
         else if (CJFM_Util.EXECUTIVES.contains(player.getName()))
         {
@@ -68,7 +68,7 @@ public class CJFM_PlayerListener implements Listener
         else if (TFM_AdminList.isSeniorAdmin(player))
         {
             player.setPlayerListName(ChatColor.LIGHT_PURPLE + player.getName());
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&dSenior Admin&8]");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&dSenior Administrator&8]");
         }
         else if (TFM_AdminList.isTelnetAdmin(player, true))
         {
@@ -78,7 +78,7 @@ public class CJFM_PlayerListener implements Listener
         else if (TFM_AdminList.isSuperAdmin(player))
         {
             player.setPlayerListName(ChatColor.AQUA + player.getName());
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&BSuper Admin&8]");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&BAdministrator&8]");
         }
     }
 
@@ -101,12 +101,11 @@ public class CJFM_PlayerListener implements Listener
             }
         }
 
-        if (command.contains("175:") || command.contains("double_plant:"))
-        {
-            event.setCancelled(true);
-            TFM_Util.bcastMsg(player.getName() + " just attempted to use the crash item! Deal with them appropriately please!", ChatColor.DARK_RED);
-        }
-
+        /*  if (command.contains("175:") || command.contains("double_plant:"))
+         {
+         event.setCancelled(true);
+         TFM_Util.bcastMsg(player.getName() + " just attempted to use the crash item! Deal with them appropriately please!", ChatColor.DARK_RED);
+         }*/
         if (command.contains("&k") && !TFM_AdminList.isSuperAdmin(player))
         {
             event.setCancelled(true);

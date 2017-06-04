@@ -1,9 +1,6 @@
 package me.RyanWild.CJFreedomMod.Commands;
 
-import java.sql.SQLException;
-import me.RyanWild.CJFreedomMod.CJFreedomMod;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
-import me.StevenLawson.TotalFreedomMod.TFM_Log;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;

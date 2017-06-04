@@ -1,7 +1,7 @@
 package me.StevenLawson.TotalFreedomMod.Listener;
 
-import me.StevenLawson.BukkitTelnet.api.TelnetCommandEvent;
-import me.StevenLawson.BukkitTelnet.api.TelnetPreLoginEvent;
+import me.totalfreedom.bukkittelnet.api.TelnetCommandEvent;
+import me.totalfreedom.bukkittelnet.api.TelnetPreLoginEvent;
 import me.StevenLawson.TotalFreedomMod.TFM_CommandBlocker;
 import me.StevenLawson.TotalFreedomMod.TFM_Admin;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;

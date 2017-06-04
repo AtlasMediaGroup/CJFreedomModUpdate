@@ -1,4 +1,4 @@
-package me.RyanWild.CJFreedomMod.Commands;
+/*package me.RyanWild.CJFreedomMod.Commands;
 
 import me.RyanWild.CJFreedomMod.CJFM_Util;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
@@ -52,7 +52,7 @@ public class Command_wildbypass extends CJFM_Command
 
         if (args.length == 1)
         {
-            if (CJFM_Util.SYSADMINS.contains(sender.getName()))
+            if (CJFM_Util.MANAGERS.contains(sender.getName()))
             {
                 if (args[0].equalsIgnoreCase("disable"))
                 {
@@ -97,3 +97,4 @@ public class Command_wildbypass extends CJFM_Command
         return false;
     }
 }
+*/

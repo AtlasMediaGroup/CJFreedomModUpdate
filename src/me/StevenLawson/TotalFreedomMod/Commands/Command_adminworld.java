@@ -60,7 +60,7 @@ public class Command_adminworld extends TFM_Command
                 {
                     if (!CJFM_ConfigEntry.ENABLE_ADMINWORLD.getBoolean())
                     {
-                        if (!CJFM_Util.SYSADMINS.contains(sender.getName()) && !CJFM_Util.EXECUTIVES.contains(sender.getName()))
+                        if (!CJFM_Util.MANAGERS.contains(sender.getName()) && !CJFM_Util.EXECUTIVES.contains(sender.getName()))
                         {
                             TFM_Util.playerMsg(sender, "AdminWorld is currently disabled!", ChatColor.RED);
                             return true;

@@ -28,7 +28,7 @@ public class CJFM_AdminBusy extends CJFM_Addon
 
         plugin.util.adminAction(player, ChatColor.AQUA + "Has gone o" + (info.isBusy() ? "ff" : "n") + " Duty");
 
-        if (CJFM_Util.SYSADMINS.contains(player.getName()))
+        if (CJFM_Util.MANAGERS.contains(player.getName()))
         {
             player.setPlayerListName((info.isBusy() ? ChatColor.GRAY + player.getName() : ChatColor.DARK_RED + player.getName()));
         }
@@ -56,7 +56,7 @@ public class CJFM_AdminBusy extends CJFM_Addon
         if (plugin.playerManager.getInfo(player).isBusy())
         {
 
-            if (CJFM_Util.SYSADMINS.contains(player.getName()))
+            if (CJFM_Util.MANAGERS.contains(player.getName()))
             {
                 TFM_PlayerData.getPlayerData(player).setTag("&8[&8Off Duty System-Admin&8]");
             }
@@ -84,7 +84,7 @@ public class CJFM_AdminBusy extends CJFM_Addon
         else
         {
 
-            if (CJFM_Util.SYSADMINS.contains(player.getName()))
+            if (CJFM_Util.MANAGERS.contains(player.getName()))
             {
                 TFM_PlayerData.getPlayerData(player).setTag("&8[&4System Administrator&8]");
             }
